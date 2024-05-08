@@ -7,7 +7,7 @@ import SwiperCore, { Swiper as SwiperType } from "swiper";
 import folder from "@/public/folder.png";
 import folder1 from "@/public/folder1.png";
 import folder2 from "@/public/folder1.png";
-
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { Navigation } from "swiper/modules";
@@ -26,6 +26,14 @@ const Casess = () => {
   }, []);
   return (
     <div className="pt-[2rem] pb-[1.5rem] bg-black">
+      <motion.h1
+        initial={{ color: "white" }}
+        animate={{ color: "#FF0000" }}
+        transition={{ delay: 3 }}
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 mt-2 uppercase text-center"
+      >
+        Most viewed
+      </motion.h1>
       <div className="mt-8">
         <Swiper
           spaceBetween={30}
@@ -45,54 +53,60 @@ const Casess = () => {
           onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <div className="w-full h-50 px-[6rem] py-[3rem] border border-white">
-              <h3 className="font-bold text-[18px] text-[#03045E]">Anger</h3>
+            <div className="w-full h-50 px-[6rem] py-[3rem]">
+              <h3 className="font-bold text-[18px] text-[#FE0000]">
+                The Gruesome Brothers
+              </h3>
               <Image src={folder1} width={300} height={300} alt="icon " />
               <Link href="/Case">
-                <button
-                  className="bg-[#03045E] text-white font-serif border rounded-md 
-                px-3 py-1 hover:bg-[#fca311] hover:text-black"
+                <motion.button
+                  className="bg-[#03045E] border-none hover:bg-[#FF0800] text-white font-serif border rounded-md 
+                px-3 py-1 "
+                  whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 1 },
+                  }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   Open Case
-                </button>
+                </motion.button>
               </Link>
-              <p className="text-md font-semibold pt-2 text-[#023047]">
-                Transforming Shame into Strength
-              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-full h-50 px-[6rem] py-[3rem]">
-              <h3 className="font-bold text-[18px] text-[#03045E]">Anger</h3>
+              <h3 className="font-bold text-[18px] text-[#FE0000]">Riddle</h3>
               <Image src={folder2} width={300} height={300} alt="icon " />
 
-              <button
-                className="bg-[#03045E] text-white font-serif border rounded-md 
-                px-3 py-1 hover:bg-[#fca311] hover:text-black"
+              <motion.button
+                className="bg-[#03045E] border-none hover:bg-[#FE0000] text-white font-serif border rounded-md 
+                px-3 py-1 "
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
               >
-                Open Article
-              </button>
-
-              <p className="text-md font-semibold pt-2 text-[#023047]">
-                Transforming Shame into Strength
-              </p>
+                Open Riddle
+              </motion.button>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-full h-50 px-[6rem] py-[3rem]">
-              <h3 className="font-bold text-[18px] text-[#03045E]">Anger</h3>
+              <h3 className="font-bold text-[18px] text-[#FE0000]">Puzzle</h3>
               <Image src={folder} width={300} height={300} alt="icon " />
 
-              <button
-                className="bg-[#03045E] text-white font-serif border rounded-md 
-                px-3 py-1 hover:bg-[#fca311] hover:text-black"
+              <motion.button
+                className="bg-[#03045E] border-none hover:bg-[#FE0000] text-white font-serif border rounded-md 
+                px-3 py-1 "
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
               >
-                Open Article
-              </button>
-
-              <p className="text-md font-semibold pt-2 text-[#023047]">
-                Transforming Shame into Strength
-              </p>
+                Open Puzzle
+              </motion.button>
             </div>
           </SwiperSlide>
         </Swiper>
