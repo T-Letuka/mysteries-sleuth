@@ -1,5 +1,8 @@
 import Image from "next/image";
 import signup from "@/public/signup.png";
+import RedButton from "../Components/Buttons/RedButton";
+import Link from "next/link";
+import WhiteButton from "../Components/Buttons/WhiteButton";
 
 export default function Signup() {
   return (
@@ -12,9 +15,7 @@ export default function Signup() {
           objectFit="cover"
         />
       </div>
-
-      <div className="absolute inset-0 bg-gray-900 opacity-75"></div>
-
+      <div className="absolute inset-0 bg-gray-900 opacity-75" />
       <div className="z-10 p-8 bg-white rounded-lg shadow-lg">
         <h1 className="text-3xl font-semibold mb-4">Sign Up</h1>
         <form>
@@ -61,12 +62,10 @@ export default function Signup() {
             />
           </div>
           <div className="flex items-center justify-between">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Sign Up
-            </button>
+            <RedButton text="Sign Up" />
+            <Link href="/">
+              <WhiteButton text="Back" />
+            </Link>
           </div>
         </form>
       </div>
