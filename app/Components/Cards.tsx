@@ -1,20 +1,20 @@
 import React from "react";
-import Image from "next/image";
 
-const Cards = () => {
+interface CardContent {
+  title: string;
+  paragraph: string;
+}
+
+const Cards = ({ title, paragraph }: CardContent) => {
   return (
-    <div className="pt-[5rem] pb-[3rem]">
-      <div className="pt-[5rem] w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-[1.4rem]">
-        <div>
-          <Cards title="Study Techniques" image={studyt.src} />
-        </div>
-        <div>
-          <Cards title="Quiz" image={Quiz.src} />
-        </div>
-        <div>
-          <Cards title="Learning Styles" image={learning.src} />
-        </div>
-      </div>
+    <div
+      className="text-center bg-[#000814] p-4  rounded-lg hover:shadow-lg transition-all duration-300
+  cursor-pointer hover:scale-110"
+    >
+      <h1 className="text-[20px] mt-[1.4rem] font-[500] text-white ">
+        {title}
+      </h1>
+      <p className="mt-[1rem] text-white opacity-90 text-[15px]">{paragraph}</p>
     </div>
   );
 };
