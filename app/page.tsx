@@ -11,7 +11,6 @@ const page = () => {
     <div>
       <ResponsiveNav />
       <Hero />
-      <About />
       <Cardsection />
       <Casess />
     </div>

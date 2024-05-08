@@ -5,6 +5,7 @@ import Image from "next/image";
 import RedButton from "./Buttons/RedButton";
 import WhiteButton from "./Buttons/WhiteButton";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,6 +15,7 @@ const Hero = () => {
           <motion.h1
             initial={{ color: "white" }}
             animate={{ color: "#FF0000" }}
+            transition={{ delay: 3 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 mt-2"
           >
             Enter the Realm of Mystery
@@ -25,8 +27,12 @@ const Hero = () => {
             the heart of suspense.
           </p>
           <span className="flex justify-center items-center gap-3 mt-2">
-            <RedButton text="Login" />
-            <WhiteButton text="Explore Site" />
+            <Link href="/Login">
+              <RedButton text="Login" />
+            </Link>
+            <Link href="/Signup">
+              <WhiteButton text="Sign up" />
+            </Link>
           </span>
         </div>
         <motion.div animate={{}} className="md:w-1/2">
