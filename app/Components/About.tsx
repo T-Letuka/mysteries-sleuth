@@ -6,9 +6,9 @@ import about01 from "@/public/about01.jpg";
 
 const About = () => {
   return (
-    <div className="pt-[3rem] pb-[3rem] bg-black ">
+    <div className="pt-[1rem] pb-[3rem] bg-black ">
       <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[4rem] items-center pt-[5rem]">
-        <div className="order-2 lg:order-2 hidden sm:block ">
+        <div className="order-2 lg:order-1 hidden sm:block ">
           <Image
             src={about01}
             alt="about-image"
@@ -16,14 +16,15 @@ const About = () => {
         "
           />
         </div>
+
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.2 }}
-          className="order-1 lg:order-1"
+          initial={{ y: -1000 }}
+          animate={{ y: 0, scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 100, damping: 10 }}
+          className="order-1 lg:order-2"
         >
           <h1
-            className="text-[20px] md:text-[25px] lg:text-[28px] text-[#FF0800] font-bold leading-[2rem] 
+            className="text-[20px] md:text-[25px] lg:text-[28px] text-white font-bold leading-[2rem] 
           md:leading-[3rem]"
           >
             Enter the Realm of Mystery
