@@ -5,9 +5,9 @@ interface Props {
 const WhiteButton = ({ text }: Props) => {
   return (
     <button
-      className="rounded-md px-4 py-1 text-[15px] md:px-8 md:py-2.5 overflow-hidden group bg-white
+      className="rounded-md px-4 py-1 text-[15px] md:px-8 md:py-2.5 overflow-hidden group bg-black
       relative hover:bg-gradient-to-r 
-    hover:from-bg-black hover:to-bg-white text-black hover:ring-2 hover:ring-offset-2
+    hover:from-bg-black hover:to-bg-white text-white hover:ring-2 hover:ring-offset-2
      hover:ring-blue-600
     transition-all ease-out duration-300"
     >
