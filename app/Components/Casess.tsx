@@ -93,11 +93,11 @@ const Casess = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-full h-50 px-[6rem] py-[3rem]">
-              <h3 className="font-bold text-[18px] text-[#FE0000]">Puzzle</h3>
+              <h3 className="font-bold text-[18px] text-[#FE0000] ">Puzzle</h3>
               <Image src={folder} width={300} height={300} alt="icon " />
 
               <motion.button
-                className="bg-[#03045E] border-none hover:bg-[#FE0000] text-white font-serif border rounded-md 
+                className="bg-[#03045E]  border-none hover:bg-[#FE0000] text-white font-serif border rounded-md 
                 px-3 py-1 "
                 whileHover={{
                   scale: 1.2,
