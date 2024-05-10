@@ -28,7 +28,7 @@ export default function Login() {
         setError("Invallid Credetials");
         return;
       }
-      router.replace("Cases");
+      router.push("/Cases");
     } catch (error) {
       console.log(error);
     }

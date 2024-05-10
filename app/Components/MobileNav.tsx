@@ -35,7 +35,7 @@ const MobileNav = ({ nav, closeNav }: Props) => {
           }}
           className="text-[25px] cursor-pointer  text-white hover:text-pink-600 transition-all duration-200 "
         >
-          <Link href="/Murder Cases">Cases</Link>
+          <Link href="/About">About</Link>
         </motion.li>
         <motion.li
           whileHover={{
@@ -44,16 +44,19 @@ const MobileNav = ({ nav, closeNav }: Props) => {
           }}
           className="text-[25px] cursor-pointer  text-white hover:text-pink-600 transition-all duration-200 "
         >
-          <Link href="/Murdercases">Murder Cases</Link>
+          <Link href="/Cases">Cases</Link>
         </motion.li>
         <motion.li
           whileHover={{
             scale: 1.2,
             transition: { duration: 0.2 },
           }}
+          whileTap={{
+            border: "1px solid red",
+          }}
           className="text-[25px] cursor-pointer  text-white hover:text-pink-600 transition-all duration-200 "
         >
-          <Link href="/Riddles">Riddles</Link>
+          <Link href="/Login">LOGIN</Link>
         </motion.li>
       </ul>
     </div>

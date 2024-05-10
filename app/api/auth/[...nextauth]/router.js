@@ -2,8 +2,9 @@ import nextAuth from "next-auth";
 import { CredentialProvider } from "next-auth/providers/credentials";
 import { connectMongodb } from "@/lib/mongodb";
 import User from "@/models/user";
+import bcrypt from "bcryptjs";
 
-export const auth = {
+export default nextAuth({
   providers: [
     CredentialProvider({
       name: "credentials",
@@ -12,14 +13,30 @@ export const auth = {
       async authorize(credentials) {
         const { email, password } = credentials;
         try {
+          // Connect to MongoDB
           await connectMongodb();
-          const user = User.findOne({ email });
+
+          // Find user by email
+          const user = await User.findOne({ email });
+
+          // If user not found, return null
           if (!user) {
             return null;
           }
+
+          // Compare passwords
+          const passwordsMatch = await bcrypt.compare(password, user.password);
+
+          // If passwords don't match, return null
+          if (!passwordsMatch) {
+            return null;
+          }
+
+          // Return authenticated user
           return user;
         } catch (error) {
-          console.log("Cannot authenticate User");
+          console.error("Error authenticating user:", error);
+          throw new Error("Could not authenticate user");
         }
       },
     }),
@@ -27,11 +44,8 @@ export const auth = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTHSECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    Login: "/Login",
+    signIn: "/",
   },
-};
-
-const handler = nextAuth(auth);
-export { handler as GET, handler as POST };
+});
