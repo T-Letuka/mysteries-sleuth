@@ -6,31 +6,39 @@ import { motion } from "framer-motion";
 import RedButton from "../Components/Buttons/RedButton";
 import WhiteButton from "../Components/Buttons/WhiteButton";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await signIn("credential", {
-        email,
-        password,
-        redirect: false,
+      const response = await fetch("/api/Login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       });
-      if (res?.error) {
-        setError("Invallid Credetials");
-        return;
+
+      if (response.ok) {
+        router.push("/Profile");
+      } else {
+        setError("Invalid email or password");
       }
-      router.push("/Cases");
     } catch (error) {
-      console.log(error);
+      console.error("Login failed", error);
+      setError("Failed to log in. Please try again later.");
     }
   };
 

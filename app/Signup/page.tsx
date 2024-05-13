@@ -11,6 +11,7 @@ export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -52,7 +53,7 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setError("");
-        router.push("/Cases");
+        router.push("/Login");
       } else {
         setError("Failed to submit the form");
       }
