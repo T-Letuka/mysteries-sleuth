@@ -25,9 +25,9 @@ const Features = () => {
               Mysteries
             </h1>
             <p className="mt-[0.2rem] text-black text-opacity-60 text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-              sint aliquid tempore possimus voluptas dolor voluptatem? Adipisci
-              aliquid temporibus amet!
+              Dive into thrilling mysteries that will keep you on the edge of
+              your seat. Uncover hidden secrets, untangle webs of deception, and
+              solve captivating cases
             </p>
           </div>
         </div>
@@ -44,9 +44,9 @@ const Features = () => {
               Riddles
             </h1>
             <p className="mt-[0.2rem] text-black text-opacity-60 text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-              sint aliquid tempore possimus voluptas dolor voluptatem? Adipisci
-              aliquid temporibus amet!
+              Test your wit and cunning with our collection of mind-bending
+              riddles. Challenge yourself to unravel the clues and unlock the
+              solutions to these perplexing enigmas.
             </p>
           </div>
         </div>
@@ -63,9 +63,9 @@ const Features = () => {
               Puzzles
             </h1>
             <p className="mt-[0.2rem] text-black text-opacity-60 text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-              sint aliquid tempore possimus voluptas dolor voluptatem? Adipisci
-              aliquid temporibus amet!
+              Exercise your brain with our selection of engaging puzzles. From
+              jigsaw puzzles to logic games, stimulate your mind and enjoy hours
+              of challenging fun.
             </p>
           </div>
         </div>

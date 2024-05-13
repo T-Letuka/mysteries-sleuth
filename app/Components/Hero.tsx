@@ -46,9 +46,9 @@ const Hero = () => {
                 Mystery <br /> Maven
               </h2>
               <p className="text-white mt-[1rem] text-[18px] text-opacity-75 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                voluptatibus ex, asperiores adipisci minus alias earum
-                dignissimos, natus exercitationem tempore, animi facere?
+                Dive into a world of mystery and adventure. Explore thrilling
+                cases, uncover hidden clues, and sharpen your detective skills
+                with us. Let the adventure begin!
               </p>
             </div>
           </div>
@@ -65,9 +65,10 @@ const Hero = () => {
                 <br /> Mysteries
               </h2>
               <p className="text-white mt-[1rem] text-[18px] text-opacity-75 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                voluptatibus ex, asperiores adipisci minus alias earum
-                dignissimos, natus exercitationem tempore, animi facere?
+                Where mysteries await your keen eye and sharp mind. Join us on a
+                journey of intrigue, discovery, and adventure. Get ready to
+                unravel secrets and solve captivating cases. Let's embark on
+                this thrilling adventure together!
               </p>
             </div>
           </div>
@@ -84,9 +85,8 @@ const Hero = () => {
                 <br /> Secrets
               </h2>
               <p className="text-white mt-[1rem] text-[18px] text-opacity-75 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                voluptatibus ex, asperiores adipisci minus alias earum
-                dignissimos, natus exercitationem tempore, animi facere?
+                Dive into mysteries, uncover clues, and embark on thrilling
+                adventures. Let's solve the puzzle together!
               </p>
             </div>
           </div>

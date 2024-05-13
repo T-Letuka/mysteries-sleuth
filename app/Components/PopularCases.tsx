@@ -4,6 +4,12 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Cards from "./Cards";
 import riddle from "@/public/riddle.png";
+import card from "@/public/card.jpg";
+import card1 from "@/public/puzzle.png";
+import hero6 from "@/public/hero6.jpg";
+import hero5 from "@/public/hero5.jpg";
+import hero4 from "@/public/murder.png";
+import hero1 from "@/public/hero1.jpg";
 
 const responsive = {
   desktop: {
@@ -42,37 +48,31 @@ const PopularCases = () => {
         >
           <Cards
             image={riddle.src}
+            title="Riddle 01"
+            paragraph="A few mystery riddles"
+            difficulty="Easy"
+          />
+          <Cards
+            image={card.src}
             title="The Vanishing Relic"
             paragraph="Mystery:Missing Things"
             difficulty="medium level"
           />
           <Cards
-            image={riddle.src}
-            title="The Vanishing Relic"
-            paragraph="Mystery:Missing Things"
-            difficulty="medium level"
-          />
-          <Cards
-            image={riddle.src}
-            title="The Vanishing Relic"
-            paragraph="Mystery:Missing Things"
-            difficulty="medium level"
-          />
-          <Cards
-            image={riddle.src}
-            title="The Vanishing Relic"
+            image={hero6.src}
+            title="The Enigmatic Heist at Ravenwood Manor"
             paragraph="Mystery:Missing Things"
             difficulty="medium level"
           />
 
           <Cards
-            image={riddle.src}
-            title="The Vanishing Relic"
+            image={card1.src}
+            title="The Vanishing Heirloom"
             paragraph="Mystery:Missing Things"
             difficulty="medium level"
           />
           <Cards
-            image={riddle.src}
+            image={hero1.src}
             title="The Vanishing Relic"
             paragraph="Mystery:Missing Things"
             difficulty="medium level"

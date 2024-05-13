@@ -17,8 +17,8 @@ const Cards = ({ title, paragraph, image, difficulty }: CardContent) => {
         <Image
           src={image}
           alt="icon"
-          width={200}
-          height={200}
+          width={300}
+          height={300}
           className="mx-auto"
         />
       </div>

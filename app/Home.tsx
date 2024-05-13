@@ -4,6 +4,7 @@ import Hero from "./Components/Hero";
 import Features from "./Components/Features";
 import PopularCases from "./Components/PopularCases";
 import About from "./Components/About";
+import Footer from "./Components/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Features />
       <PopularCases />
       <About />
+      <Footer />
     </div>
   );
 };

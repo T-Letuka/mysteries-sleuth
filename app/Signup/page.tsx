@@ -1,153 +1,91 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import signup from "@/public/signup.png";
+import ResponsiveNav from "../Components/ResponsiveNav";
 import RedButton from "../Components/Buttons/RedButton";
-import Link from "next/link";
 import WhiteButton from "../Components/Buttons/WhiteButton";
+import Link from "next/link";
+import Footer from "../Components/Footer";
 import { useRouter } from "next/navigation";
 
-export default function Signup() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+const page = () => {
   const [error, setError] = useState("");
   const router = useRouter();
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
-      setError("All fields are required");
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+    if (!isValidEmail(email)) {
+      setError("Email is Invalid");
       return;
     }
-
+    if (!password || password.length < 6) {
+      setError("Invalid Password");
+      return;
+    }
     try {
-      const res = await fetch("/api/UserExists", {
+      const res = await fetch("/api/Signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, password }),
       });
-      const { user } = await res.json();
-      if (user) {
-        setError("User already exists");
-        return;
+      if (res.status === 400) {
+        setError("User is registered");
       }
-
-      const response = await fetch("/api/Signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-      });
-
-      if (response.ok) {
-        setName("");
-        setEmail("");
-        setPassword("");
+      if (res.status === 200) {
         setError("");
         router.push("/Login");
-      } else {
-        setError("Failed to submit the form");
       }
     } catch (error) {
-      setError("Error occurred while submitting the form");
-      console.log("Error occurred while submitting the form", error);
+      setError("Something Went Wrong,Please Try again");
+      console.log(error);
     }
   };
-
   return (
-    <div className="min-h-screen  flex items-center justify-center  bg-gray-200">
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src={signup}
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-gray-900 opacity-75" />
-      <div className="z-10 p-8 bg-white rounded-lg shadow-lg border-t-4 border-red-500">
-        <h1 className="text-3xl font-semibold mb-4">Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              className="block tracking-widest text-gray-700 text-sm font-bold mb-2"
-              htmlFor="username"
-            >
-              Username
-            </label>
+    <div>
+      <ResponsiveNav />
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className="bg-black p-8 rounded-lg shadow-lg w-96">
+          <h1 className="heading text-white">Sign Up</h1>
+          <form onSubmit={handleSubmit}>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="shadow  appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Enter your username"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block tracking-widest text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="shadow  appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
               type="email"
-              placeholder="Enter your email address"
+              className="w-full border border-gray-300 text-black px-3 rounded-md py-2 mb-4 focus:outline"
+              placeholder="Email"
+              required
             />
-          </div>
-          <div className="mb-2">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="password"
-            >
-              Password
-            </label>
             <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
               type="password"
-              placeholder="******************"
+              className="w-full border border-gray-300 text-black px-3 rounded-md py-2 mb-4 focus:outline"
+              placeholder="Enter Password"
+              required
             />
-          </div>
-
-          <div className="flex items-center justify-between">
-            <RedButton text="Sign Up" />
-            <Link href="/">
-              <WhiteButton text="Back" />
-            </Link>
-          </div>
-        </form>
-        {error && (
-          <div
-            className="bg-red-500 text-white w-fit
-          mt-2 mb-2 text-sm px-3 py-1 rounded-md"
-          >
-            {error}
-          </div>
-        )}
-        <p className="mt-2 flex gap-2 items-center">
-          Have have an Account?
-          <Link href="/Login" className="hover:text-blue-600">
-            Login
-          </Link>
-        </p>
+            <p className="text-red-500 text-[16px] mb-4">{error && error}</p>
+            <div className="flex items-center justify-between mt-2">
+              <RedButton text="Submit" />
+              <WhiteButton text="Home" />
+            </div>
+            <p className="text-white mt-2 ">
+              Don't Have An Account?{" "}
+              <Link
+                href="/Signup"
+                className="hover:text-red-500 hover:underline hover:text-[18px]"
+              >
+                Sign Up
+              </Link>
+            </p>
+          </form>
+        </div>
       </div>
+      <Footer />
     </div>
   );
-}
+};
+
+export default page;

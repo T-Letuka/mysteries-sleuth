@@ -17,15 +17,18 @@ const About = () => {
             Realm of Mystery
           </h1>
           <p className="mt-[1rem] text-black text-[17px] text-opacity-70">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-            obcaecati praesentium similique numquam fugit qui quae? Pariatur
-            cumque cum esse dolore quia placeat aut, illo architecto dicta vitae
-            inventore ex.
+            Step into a world where mysteries abound and secrets whisper in the
+            shadows. Our website is a haven for those who revel in the thrill of
+            the unknown, where each click leads you deeper into the labyrinth of
+            suspense and curiosity. From unsolved crimes to supernatural
+            phenomena, we delve into the realms of the mysterious, offering
+            tantalizing tales and thought-provoking puzzles for the curious
+            mind. Join us on this journey of discovery, where every page holds
+            the promise of unraveling a new mystery.
           </p>
           <div className="flex items-center gap-5 mt-6">
-            {" "}
-            <WhiteButton text="Sign In" />
-            <RedButton text="Sign Up" />
+            <WhiteButton text="Sign Up" />
+            <RedButton text="Login" />
           </div>
         </div>
       </div>
