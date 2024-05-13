@@ -1,46 +1,33 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import about01 from "@/public/about01.jpg";
+import React from "react";
+import vide from "@/public/abbout.gif";
+import WhiteButton from "./Buttons/WhiteButton";
+import RedButton from "./Buttons/RedButton";
 
 const About = () => {
   return (
-    <div className="pt-[1rem] pb-[3rem] bg-black ">
-      <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[4rem] items-center pt-[5rem]">
-        <div className="order-2 lg:order-1 hidden sm:block ">
-          <Image
-            src={about01}
-            alt="about-image"
-            className="rounded-lg
-        "
-          />
-        </div>
-
-        <motion.div
-          initial={{ y: -1000 }}
-          animate={{ y: 0, scale: 1.2 }}
-          transition={{ type: "spring", stiffness: 100, damping: 10 }}
-          className="order-1 lg:order-2"
-        >
+    <div className="pt-[3rem] pb-[3rem]">
+      <div className="w-[80%] mx-auto grid items-center grid-cols-1 md:grid-cols-2 lg:grid-col-2 gap-[2rem]">
+        <Image src={vide} alt="about-img" />
+        <div>
           <h1
-            className="text-[20px] md:text-[25px] lg:text-[28px] text-white font-bold leading-[2rem] 
-          md:leading-[3rem]"
+            className="text-[30px] md:text-[40px] lg:text-[50px]  xl:text-[60px] font-serif
+          leading-[2rem] md:leading-[3rem] uppercase"
           >
-            Enter the Realm of Mystery
+            Realm of Mystery
           </h1>
-          <p className="mt-[1.5rem] mb-[1.5rem] text-white opacity-90 text-[18px] md:text-[20px] ">
-            Welcome to the gateway of intrigue and enigma! Step into a world
-            where mysteries abound and secrets whisper in the shadows. Our
-            website is a haven for those who revel in the thrill of the unknown,
-            where each click leads you deeper into the labyrinth of suspense and
-            curiosity. From unsolved crimes to supernatural phenomena, we delve
-            into the realms of the mysterious, offering tantalizing tales and
-            thought-provoking puzzles for the curious mind. Join us on this
-            journey of discovery, where every page holds the promise of
-            unraveling a new mystery.
+          <p className="mt-[1rem] text-black text-[17px] text-opacity-70">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            obcaecati praesentium similique numquam fugit qui quae? Pariatur
+            cumque cum esse dolore quia placeat aut, illo architecto dicta vitae
+            inventore ex.
           </p>
-        </motion.div>
+          <div className="flex items-center gap-5 mt-6">
+            {" "}
+            <WhiteButton text="Sign In" />
+            <RedButton text="Sign Up" />
+          </div>
+        </div>
       </div>
     </div>
   );
