@@ -5,6 +5,7 @@ interface Props {
 const BlueButton = ({ text }: Props) => {
   return (
     <button
+      type="submit"
       className="rounded-md px-4 py-1 text-[15px] md:px-8 md:py-2.5 overflow-hidden group bg-[#0000FF]
       relative hover:bg-gradient-to-r 
     hover:from-bg-black hover:to-bg-blue text-white hover:ring-2 hover:ring-offset-2

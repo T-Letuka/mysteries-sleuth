@@ -1,11 +1,16 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ResponsiveNav from "../Components/ResponsiveNav";
 import RedButton from "../Components/Buttons/RedButton";
 import WhiteButton from "../Components/Buttons/WhiteButton";
 import Link from "next/link";
 import Footer from "../Components/Footer";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  const router = useRouter();
+  const [error, setError] = useState("");
+
   return (
     <div>
       <ResponsiveNav />
