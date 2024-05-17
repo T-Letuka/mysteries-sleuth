@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Bars3BottomRightIcon } from "@heroicons/react/16/solid";
-import { motion } from "framer-motion";
 import { PiDetectiveLight } from "react-icons/pi";
 import RedButton from "./Buttons/RedButton";
 
@@ -13,15 +12,16 @@ const Nav = ({ openNav }: Props) => {
   return (
     <div className="h-[12vh] bg-white shadow-xl ">
       <div className="w-[85%] flex items-center justify-between mx-auto h-[12vh]">
-        <h1 className="text-[16px] md:text-[25px] gap-2 font-bold  flex items-center justify-center ">
-          <span className="text-[27px] md:text-[40px] text-black">
-            <PiDetectiveLight size={50} color="black" />
-          </span>
-          <span className="text-[27px] md:text-[40px] text-[#FE0000]">
-            Sleuth Scribes
-          </span>
-        </h1>
-
+        <Link href="/">
+          <h1 className="text-[16px] md:text-[25px] gap-2 font-bold  flex items-center justify-center ">
+            <span className="text-[27px] md:text-[40px] text-black">
+              <PiDetectiveLight size={50} color="black" />
+            </span>
+            <span className="text-[27px] md:text-[40px] text-[#FE0000]">
+              Sleuth Scribes
+            </span>
+          </h1>
+        </Link>
         <ul className="hidden lg:flex item-center justify-center space-x-10 text-black">
           <li className="text-[18px] cursor-pointer text-white">
             <Link href="/">Home</Link>
