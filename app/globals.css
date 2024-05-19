@@ -11,4 +11,7 @@
     @apply text-[30px] md:text-[35px] lg:text-[45px] xl:text-[50px] uppercase font-serif text-black md:leading-[4rem] 
     leading-[3rem] text-center;
   }
+  .mini-heading {
+    @apply text-[18px] md:text-[22px] lg:text-[30px] uppercase font-medium text-black md:leading-[3rem] leading-[2rem];
+  }
 }
