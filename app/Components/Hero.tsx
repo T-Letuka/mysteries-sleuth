@@ -6,6 +6,7 @@ import hero3 from "@/public/hero4.jpg";
 import hero from "@/public/hero5.jpg";
 import hero1 from "@/public/hero6.jpg";
 import Image from "next/image";
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -35,10 +36,15 @@ const Hero = () => {
         itemClass="item"
         showDots={true}
       >
-        <div className="w-[100%] h-[88vh] flex items-center justify-center flex-col bg-black md:clip_path">
-          <div className="w-[80%] grid grid-col-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto">
+        <div className="relative w-full h-[88vh] flex items-center justify-center bg-black md:clip_path">
+          <Image
+            src={hero3}
+            alt="hero-img"
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+          />
+          <div className="relative z-10 w-[80%] grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto bg-black md:bg-transparent bg-opacity-50 p-4 md:p-0">
             <Image src={hero3} alt="hero-img" className="hidden md:block" />
-            <div>
+            <div className="text-center md:text-left">
               <h1 className="text-[40px] font-semibold text-white">
                 SLEUTH SCRIBES
               </h1>
@@ -53,16 +59,20 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[88vh] flex items-center justify-center flex-col bg-black md:clip_path">
-          <div className="w-[80%] p-1 grid grid-col-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto">
+        <div className="relative w-full h-[88vh] flex items-center justify-center bg-black md:clip_path">
+          <Image
+            src={hero}
+            alt="hero-img"
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+          />
+          <div className="relative z-10 w-[80%] grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto bg-black md:bg-transparent bg-opacity-50 p-4 md:p-0">
             <Image src={hero} alt="hero-img" className="hidden md:block" />
-            <div>
+            <div className="text-center md:text-left">
               <h1 className="text-[40px] font-semibold text-white">
                 SLEUTH SCRIBES
               </h1>
-              <h2 className="text-[60px] leading-[4rem] uppercase text-[#FF0800] font-bold">
-                Unraveling
-                <br /> Mysteries
+              <h2 className="text-[50px] leading-[4rem] uppercase text-[#FF0800] font-bold">
+                Unraveling <br /> Mysteries
               </h2>
               <p className="text-white mt-[1rem] text-[18px] text-opacity-75 ">
                 Where mysteries await your keen eye and sharp mind. Join us on a
@@ -73,16 +83,20 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="w-[100%] h-[88vh] flex items-center justify-center flex-col bg-[#111111] md:clip_path">
-          <div className="w-[80%] grid grid-col-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto">
+        <div className="relative w-full h-[88vh] flex items-center justify-center bg-[#111111] md:clip_path">
+          <Image
+            src={hero1}
+            alt="hero-img"
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+          />
+          <div className="relative z-10 w-[80%] grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 mx-auto bg-black md:bg-transparent bg-opacity-50 p-4 md:p-0">
             <Image src={hero1} alt="hero-img" className="hidden md:block" />
-            <div>
+            <div className="text-center md:text-left">
               <h1 className="text-[40px] font-semibold text-white">
                 SLEUTH SCRIBES
               </h1>
-              <h2 className="text-[60px] leading-[5rem] uppercase text-[#FF0800] font-bold">
-                Unlocking
-                <br /> Secrets
+              <h2 className="text-[50px] leading-[5rem] uppercase text-[#FF0800] font-bold">
+                Unlocking <br /> Secrets
               </h2>
               <p className="text-white mt-[1rem] text-[18px] text-opacity-75 ">
                 Dive into mysteries, uncover clues, and embark on thrilling

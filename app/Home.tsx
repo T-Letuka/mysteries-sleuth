@@ -11,9 +11,10 @@ const Home = () => {
     <div className="overflow-hidden">
       <ResponsiveNav />
       <Hero />
+      <About />
       <Features />
       <PopularCases />
-      <About />
+
       <Footer />
     </div>
   );
