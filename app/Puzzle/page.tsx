@@ -3,13 +3,11 @@ import React from "react";
 import ResponsiveNav from "../Components/ResponsiveNav";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 import folder from "@/public/folder.png";
 import folder1 from "@/public/folder1.png";
 import hero6 from "@/public/malware.png";
 import hero from "@/public/wanted.png";
 import hero1 from "@/public/wanted2.png";
-import Cases from "../Components/Cases";
 import Footer from "../Components/Footer";
 import Riddles from "../Components/Riddles";
 

@@ -67,96 +67,109 @@ const InvestigationComponent: React.FC = () => {
         <h2 className="text-xl underline font-bold mb-2 mt-2">
           Investigation:
         </h2>
-        {questionState === 1 && (
-          <div className="mx-auto border border-gray-600 w-full md:w-[50%] shadow-lg p-4">
-            <h3 className="mini-heading mt-2 px-2 text-center">
-              Clue Analysis
-            </h3>
-            <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
-              Vjdnl ltf ymj Jswjfx.
-            </p>
-            <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
-              Decode the Clue:
-            </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-              <input
-                type="text"
-                className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
-                placeholder="Your answer..."
-                value={answers[0]}
-                onChange={(e) =>
-                  setAnswers([e.target.value, answers[1], answers[2]])
-                }
-              />
-              <button
-                className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
-                onClick={() => checkAnswer(1)}
-              >
-                Submit
-              </button>
-            </div>
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="md:w-2/3">
+            {questionState === 1 && (
+              <div className="mx-auto border border-gray-600 w-full shadow-lg p-4">
+                <h3 className="mini-heading mt-2 px-2 text-center">
+                  Clue Analysis
+                </h3>
+                <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
+                  Vjdnl ltf ymj Jswjfx.
+                </p>
+                <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
+                  Decode the Clue:
+                </p>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                  <input
+                    type="text"
+                    className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
+                    placeholder="Your answer..."
+                    value={answers[0]}
+                    onChange={(e) =>
+                      setAnswers([e.target.value, answers[1], answers[2]])
+                    }
+                  />
+                  <button
+                    className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
+                    onClick={() => checkAnswer(1)}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            )}
+            {questionState === 2 && (
+              <div className="mx-auto border border-gray-600 w-full shadow-lg p-4">
+                <h3 className="mini-heading mt-2 px-2 text-center">
+                  Clue Analysis
+                </h3>
+                <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
+                  Zuotm ynq mfx gjxy. Gtbp ymj Xykk Kqxxzj
+                </p>
+                <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
+                  Decode the Clue:
+                </p>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                  <input
+                    type="text"
+                    className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
+                    placeholder="Your answer..."
+                    value={answers[1]}
+                    onChange={(e) =>
+                      setAnswers([answers[0], e.target.value, answers[2]])
+                    }
+                  />
+                  <button
+                    className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
+                    onClick={() => checkAnswer(2)}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            )}
+            {questionState === 3 && (
+              <div className="mx-auto border border-gray-600 w-full shadow-lg p-4">
+                <h3 className="mini-heading mt-2 px-2 text-center">
+                  Clue Analysis
+                </h3>
+                <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
+                  Fsi xtrjwsy mj xli Gjmnw yt nyfym
+                </p>
+                <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
+                  Decode the Clue:
+                </p>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                  <input
+                    type="text"
+                    className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
+                    placeholder="Your answer..."
+                    value={answers[2]}
+                    onChange={(e) =>
+                      setAnswers([answers[0], answers[1], e.target.value])
+                    }
+                  />
+                  <button
+                    className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
+                    onClick={() => checkAnswer(3)}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-        {questionState === 2 && (
-          <div className="mx-auto border border-gray-600 w-full md:w-[50%] shadow-lg p-4">
-            <h3 className="mini-heading mt-2 px-2 text-center">
-              Clue Analysis
-            </h3>
-            <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
-              Zuotm ynq mfx gjxy. Gtbp ymj Xykk Kqxxzj
-            </p>
+          <div className="md:w-1/3 border border-gray-600 shadow-lg p-4">
+            <h3 className="mini-heading mt-2 px-2 text-center">Answer</h3>
             <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
-              Decode the Clue:
+              The answer to the first clue:
             </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-              <input
-                type="text"
-                className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
-                placeholder="Your answer..."
-                value={answers[1]}
-                onChange={(e) =>
-                  setAnswers([answers[0], e.target.value, answers[2]])
-                }
-              />
-              <button
-                className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
-                onClick={() => checkAnswer(2)}
-              >
-                Submit
-              </button>
-            </div>
+            <p className="font-bold text-[18px] md:text-[20px] text-center text-red-700">
+              {answers[0]}
+            </p>
           </div>
-        )}
-        {questionState === 3 && (
-          <div className="mx-auto border border-gray-600 w-full md:w-[50%] shadow-lg p-4">
-            <h3 className="mini-heading mt-2 px-2 text-center">
-              Clue Analysis
-            </h3>
-            <p className="mb-2 mt-2 px-2 font-bold text-[18px] md:text-[20px] text-center">
-              Fsi xtrjwsy mj xli Gjmnw yt nyfym
-            </p>
-            <p className="px-4 text-[16px] md:text-[18px] text-center mb-2">
-              Decode the Clue:
-            </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-              <input
-                type="text"
-                className="border border-gray-300 px-4 py-2 rounded-md mb-2 md:mb-0 w-full md:w-auto"
-                placeholder="Your answer..."
-                value={answers[2]}
-                onChange={(e) =>
-                  setAnswers([answers[0], answers[1], e.target.value])
-                }
-              />
-              <button
-                className="bg-black hover:bg-gray-500 hover:text-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto"
-                onClick={() => checkAnswer(3)}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
         <p className="text-center text-red-500 mt-4">{feedback}</p>
       </div>
     </>
